@@ -15,6 +15,8 @@ namespace Fingerprinty.Hardware
             HashFunc = ComputeHash;
         }
 
+        public abstract SupportedPlatforms SupportedPlatforms { get; }
+
         private static string ComputeHash(string value)
         {
             var stringBuilder = new StringBuilder(64);

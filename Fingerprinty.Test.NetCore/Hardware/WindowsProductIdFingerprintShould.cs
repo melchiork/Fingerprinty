@@ -2,7 +2,7 @@
 
 namespace Fingerprinty.Test.NetCore.Hardware
 {
-    public class HardwareFingerprintProviderShould : AllHardwareProvidersShould
+    public class WindowsProductIdFingerprintShould : AllHardwareProvidersShould
     {
         protected override IHardwareFingerprintProvider FingerprintProvider { get; } = new WindowsProductIdFingerprint();
     }
