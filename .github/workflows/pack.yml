@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  create-package:
 
     runs-on: ubuntu-latest
 
@@ -19,3 +19,8 @@ jobs:
       run: dotnet build --configuration Release
     - name: Pack with dotnet
       run: dotnet pack Fingerprinty --configuration Release -o CreatedPackages --no-build
+    - name: Upload package
+      uses: actions/upload-artifact@v1
+      with:
+        name: nuget_package
+        path: Fingerprinty\CreatedPackages
