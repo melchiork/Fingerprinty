@@ -5,7 +5,7 @@ namespace Fingerprinty.Hardware
 {
     internal class WindowsProductIdFingerprint : HardwareFingerprint, IHardwareFingerprintProvider
     {
-        public override SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
+        public SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
 
         public string Get()
         {
