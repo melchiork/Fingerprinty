@@ -23,4 +23,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: nuget_package
-        path: Fingerprinty\CreatedPackages
+        path: CreatedPackages
