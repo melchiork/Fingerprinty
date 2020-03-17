@@ -19,5 +19,15 @@ namespace Fingerprinty.Test.NetCore.Hardware
 
             first.Should().BeEquivalentTo(second);
         }
+
+        [SkippableFact]
+        public void ReturnHardwareFingerprintWithFixedStringValueLength()
+        {
+            Skip.If(FingerprintProvider.SupportedPlatforms.IsSupportedOnCurrentRuntime() == false, "Not supported on current OS platform.");
+
+            var hardwareFingerprint = FingerprintProvider.Get();
+
+            hardwareFingerprint.Value.Should().HaveLength(16);
+        }
     }
 }

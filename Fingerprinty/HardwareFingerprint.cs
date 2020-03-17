@@ -4,6 +4,8 @@ namespace Fingerprinty
 {
     public class HardwareFingerprint : IEquatable<HardwareFingerprint>
     {
+        public static int ValueLength { get; } = 16;
+
         public HardwareFingerprint(string value)
         {
             Value = value;

@@ -12,7 +12,7 @@ namespace Fingerprinty.Hardware
 
             var addressesText = Encoding.UTF8.GetString(allCombinedMAcAddresses);
 
-            return new HardwareFingerprint(HashFunc(addressesText));
+            return FingerprintFactory.Create(addressesText);
         }
 
         public override SupportedPlatforms SupportedPlatforms { get; } =

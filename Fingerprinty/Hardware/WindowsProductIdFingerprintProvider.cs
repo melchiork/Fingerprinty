@@ -9,7 +9,9 @@ namespace Fingerprinty.Hardware
 
         public override HardwareFingerprint Get()
         {
-            return new HardwareFingerprint(GetProductId());
+            var productId = GetProductId();
+
+            return FingerprintFactory.Create(productId);
         }
         
         private static string GetProductId()
