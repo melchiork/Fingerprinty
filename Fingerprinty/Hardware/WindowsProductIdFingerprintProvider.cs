@@ -3,11 +3,11 @@ using Microsoft.Win32;
 
 namespace Fingerprinty.Hardware
 {
-    internal class WindowsProductIdFingerprint : HardwareFingerprint, IHardwareFingerprintProvider
+    internal class WindowsProductIdFingerprintProvider : HardwareFingerprintProvider
     {
-        public SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
+        public override SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
 
-        public string Get()
+        public override string Get()
         {
             return GetProductId();
         }

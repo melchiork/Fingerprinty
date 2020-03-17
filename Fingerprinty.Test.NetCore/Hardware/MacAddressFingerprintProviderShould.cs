@@ -4,9 +4,9 @@ using Xunit;
 
 namespace Fingerprinty.Test.NetCore.Hardware
 {
-    public class MacAddressFingerprintShould : AllHardwareProvidersShould
+    public class MacAddressFingerprintProviderShould : AllHardwareProvidersShould
     {
-        protected override IHardwareFingerprintProvider FingerprintProvider { get; } = new MacAddressFingerprint();
+        protected override HardwareFingerprintProvider FingerprintProvider { get; } = new MacAddressFingerprintProvider();
 
         [Fact]
         public void SupportLinuxAndWindows()

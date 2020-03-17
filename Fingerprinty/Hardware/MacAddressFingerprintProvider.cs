@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Fingerprinty.Hardware
 {
-    public class MacAddressFingerprint : HardwareFingerprint, IHardwareFingerprintProvider
+    public class MacAddressFingerprintProvider : HardwareFingerprintProvider
     {
-        public string Get()
+        public override string Get()
         {
             var allCombinedMAcAddresses = GetAllCombinedMacAddresses();
 
@@ -15,7 +15,7 @@ namespace Fingerprinty.Hardware
             return HashFunc(addressesText);
         }
 
-        public SupportedPlatforms SupportedPlatforms { get; } =
+        public override SupportedPlatforms SupportedPlatforms { get; } =
             SupportedPlatforms.Linux | SupportedPlatforms.Windows;
 
         private static byte[] GetAllCombinedMacAddresses()

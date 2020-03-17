@@ -1,11 +1,12 @@
-﻿using FluentAssertions;
+﻿using Fingerprinty.Hardware;
+using FluentAssertions;
 using Xunit;
 
 namespace Fingerprinty.Test.NetCore.Hardware
 {
     public abstract class AllHardwareProvidersShould
     {
-        protected abstract IHardwareFingerprintProvider FingerprintProvider { get; }
+        protected abstract HardwareFingerprintProvider FingerprintProvider { get; }
 
         [SkippableFact]
         public void ReturnTheSameValueIfCalledTwice()

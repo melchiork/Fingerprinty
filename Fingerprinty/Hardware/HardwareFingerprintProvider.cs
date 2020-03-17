@@ -4,16 +4,20 @@ using System.Text;
 
 namespace Fingerprinty.Hardware
 {
-    public abstract class HardwareFingerprint
+    public abstract class HardwareFingerprintProvider
     {
         protected readonly Func<string, string> HashFunc;
 
         private static int IdentifierLength { get; } = 32;
 
-        protected HardwareFingerprint()
+        protected HardwareFingerprintProvider()
         {
             HashFunc = ComputeHash;
         }
+
+        public abstract string Get();
+
+        public abstract SupportedPlatforms SupportedPlatforms { get; }
 
         private static string ComputeHash(string value)
         {

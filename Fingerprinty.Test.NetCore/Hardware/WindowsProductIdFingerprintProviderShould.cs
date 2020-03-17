@@ -4,9 +4,9 @@ using Xunit;
 
 namespace Fingerprinty.Test.NetCore.Hardware
 {
-    public class WindowsProductIdFingerprintShould : AllHardwareProvidersShould
+    public class WindowsProductIdFingerprintProviderShould : AllHardwareProvidersShould
     {
-        protected override IHardwareFingerprintProvider FingerprintProvider { get; } = new WindowsProductIdFingerprint();
+        protected override HardwareFingerprintProvider FingerprintProvider { get; } = new WindowsProductIdFingerprintProvider();
 
         [Fact]
         public void SupportOnlyWindows()
