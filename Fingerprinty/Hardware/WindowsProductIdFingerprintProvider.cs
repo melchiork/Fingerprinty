@@ -7,9 +7,9 @@ namespace Fingerprinty.Hardware
     {
         public override SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
 
-        public override string Get()
+        public override HardwareFingerprint Get()
         {
-            return GetProductId();
+            return new HardwareFingerprint(GetProductId());
         }
         
         private static string GetProductId()

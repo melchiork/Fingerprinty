@@ -6,13 +6,13 @@ namespace Fingerprinty.Hardware
 {
     public class MacAddressFingerprintProvider : HardwareFingerprintProvider
     {
-        public override string Get()
+        public override HardwareFingerprint Get()
         {
             var allCombinedMAcAddresses = GetAllCombinedMacAddresses();
 
             var addressesText = Encoding.UTF8.GetString(allCombinedMAcAddresses);
 
-            return HashFunc(addressesText);
+            return new HardwareFingerprint(HashFunc(addressesText));
         }
 
         public override SupportedPlatforms SupportedPlatforms { get; } =

@@ -15,7 +15,7 @@ namespace Fingerprinty.Hardware
             HashFunc = ComputeHash;
         }
 
-        public abstract string Get();
+        public abstract HardwareFingerprint Get();
 
         public abstract SupportedPlatforms SupportedPlatforms { get; }
 
