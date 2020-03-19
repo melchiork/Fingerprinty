@@ -1,13 +1,22 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Fingerprinty
 {
     public class HardwareFingerprint : IEquatable<HardwareFingerprint>
     {
-        public static int ValueLength { get; } = 16;
+        public static int ValueLength { get; } = 19;
+
+        public static Regex Pattern { get; } = new Regex("[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}",
+            RegexOptions.CultureInvariant | RegexOptions.Compiled);
 
         protected internal HardwareFingerprint(string value)
         {
+            if (Pattern.IsMatch(value) == false)
+            {
+                throw new ArgumentException("Provided value doesn't match the pattern.", nameof(value));
+            }
+
             Value = value;
         }
         
@@ -16,7 +25,7 @@ namespace Fingerprinty
         /// </summary>
         public virtual string Value { get; }
 
-        public virtual bool Equals(HardwareFingerprint other)
+        public bool Equals(HardwareFingerprint other)
         {
             if (other is null) return false;
             if (ReferenceEquals(this, other)) return true;

@@ -27,7 +27,17 @@ namespace Fingerprinty.Test.NetCore.Hardware
 
             var hardwareFingerprint = FingerprintProvider.Get();
 
-            hardwareFingerprint.Value.Should().HaveLength(16);
+            hardwareFingerprint.Value.Should().HaveLength(19);
+        }
+
+        [SkippableFact]
+        public void ReturnHardwareFingerprintMAtchingPattern()
+        {
+            Skip.If(FingerprintProvider.SupportedPlatforms.IsSupportedOnCurrentRuntime() == false, "Not supported on current OS platform.");
+
+            var hardwareFingerprint = FingerprintProvider.Get();
+
+            hardwareFingerprint.Value.Should().MatchRegex("[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}");
         }
     }
 }

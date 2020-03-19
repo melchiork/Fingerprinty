@@ -9,7 +9,7 @@ namespace Fingerprinty.Test.NetCore.Hardware
         protected override HardwareFingerprintProvider FingerprintProvider { get; } = new DriveFingerprintProvider();
 
         [Fact]
-        public void SupportWindows()
+        public void SupportOnlyWindows()
         {
             FingerprintProvider.SupportedPlatforms.Should().Be(SupportedPlatforms.Windows);
         }

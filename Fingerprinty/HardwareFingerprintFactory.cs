@@ -49,7 +49,13 @@ namespace Fingerprinty
 
         private static string Transform(string hashText)
         {
-            return hashText.Substring(0, HardwareFingerprint.ValueLength);
+            var shortened = hashText.Substring(0, 16);
+
+            var split = shortened.Split(4);
+
+            var joined = string.Join("-", split);
+
+            return joined;
         }
     }
 }
