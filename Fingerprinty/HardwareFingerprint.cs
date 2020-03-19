@@ -6,7 +6,7 @@ namespace Fingerprinty
     {
         public static int ValueLength { get; } = 16;
 
-        public HardwareFingerprint(string value)
+        protected internal HardwareFingerprint(string value)
         {
             Value = value;
         }
@@ -33,7 +33,7 @@ namespace Fingerprinty
 
         public override int GetHashCode()
         {
-            return (Value != null ? Value.GetHashCode() : 0);
+            return Value != null ? Value.GetHashCode() : 0;
         }
     }
 }

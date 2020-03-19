@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Linq;
 using System.Management;
-using Mono.Unix;
 
 namespace Fingerprinty.Hardware
 {

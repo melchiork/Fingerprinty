@@ -7,7 +7,7 @@ namespace Fingerprinty
     public enum SupportedPlatforms
     {
         Windows = 1,
-        Linux = 2,
+        Linux = 2
     }
 
     public static class SupportedPlatformsExtensions
