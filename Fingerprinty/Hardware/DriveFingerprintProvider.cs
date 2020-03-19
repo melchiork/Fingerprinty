@@ -16,11 +16,13 @@ namespace Fingerprinty.Hardware
         {
             try
             {
-                var disk = new ManagementObject(@"win32_logicaldisk.deviceid=""C:""");
-                disk.Get();
-
-                var volumeSerial = disk["VolumeSerialNumber"].ToString();
-                disk.Dispose();
+                string volumeSerial;
+                using (var disk = new ManagementObject(@"win32_logicaldisk.deviceid=""C:"""))
+                {
+                    disk.Get();
+                    volumeSerial = disk["VolumeSerialNumber"].ToString();
+                    disk.Dispose();
+                }
 
                 return volumeSerial;
             }
