@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Fingerprinty
@@ -7,6 +8,11 @@ namespace Fingerprinty
     {
         public HardwareFingerprint Create(string text)
         {
+            if (string.IsNullOrEmpty(text))
+            {
+                throw new ArgumentException("The provided value cannot be null or empty.", nameof(text));
+            }
+
             var bytes = Encoding.UTF8.GetBytes(text);
 
             return Create(bytes);
@@ -14,6 +20,11 @@ namespace Fingerprinty
 
         public HardwareFingerprint Create(byte[] bytes)
         {
+            if (bytes.Length == 0)
+            {
+                throw new ArgumentException("Provided value cannot have Length equal 0.", nameof(bytes));
+            }
+
             var hashText = ComputeHash(bytes);
             var fingerprintValue = Transform(hashText);
 

@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Linq;
 using System.Management;
+using Mono.Unix;
 
 namespace Fingerprinty.Hardware
 {
     public class DriveFingerprintProvider : HardwareFingerprintProvider
     {
+        public override SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
+
         public override HardwareFingerprint Get()
         {
             var cDriveSerial = GetCDriveSerial();
@@ -31,7 +35,5 @@ namespace Fingerprinty.Hardware
                 throw new FingerprintyException("Not possible to find disk C:.", ex);
             }
         }
-
-        public override SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
     }
 }
