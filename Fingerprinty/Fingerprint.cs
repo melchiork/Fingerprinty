@@ -3,14 +3,20 @@ using System.Text.RegularExpressions;
 
 namespace Fingerprinty
 {
-    public class HardwareFingerprint : IEquatable<HardwareFingerprint>
+    public class Fingerprint : IEquatable<Fingerprint>
     {
         public static Regex Pattern { get; } = new Regex("[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}",
             RegexOptions.CultureInvariant | RegexOptions.Compiled);
 
-        protected internal HardwareFingerprint(string value)
+        internal Fingerprint(string value) 
+            : this(value, x => Pattern.IsMatch(x))
         {
-            if (Pattern.IsMatch(value) == false)
+            
+        }
+
+        protected Fingerprint(string value, Func<string, bool> isValid)
+        {
+            if (isValid(value) == false)
             {
                 throw new ArgumentException("Provided value doesn't match the pattern.", nameof(value));
             }
@@ -19,11 +25,11 @@ namespace Fingerprinty
         }
         
         /// <summary>
-        /// Human readable value of <see cref="HardwareFingerprint"/>
+        /// Human readable value of <see cref="Fingerprint"/>
         /// </summary>
-        public virtual string Value { get; }
+        public string Value { get; }
 
-        public virtual bool Equals(HardwareFingerprint other)
+        public virtual bool Equals(Fingerprint other)
         {
             if (other is null) return false;
             if (ReferenceEquals(this, other)) return true;
@@ -35,7 +41,7 @@ namespace Fingerprinty
             if (obj is null) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((HardwareFingerprint) obj);
+            return Equals((Fingerprint) obj);
         }
 
         public override int GetHashCode()

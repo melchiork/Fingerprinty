@@ -2,14 +2,14 @@
 {
     public abstract class FingerprintProvider
     {
-        private protected readonly HardwareFingerprintFactory FingerprintFactory;
+        private protected readonly FingerprintFactory FingerprintFactory;
 
-        protected FingerprintProvider(HardwareFingerprintFactory fingerprintFactory)
+        protected FingerprintProvider(FingerprintFactory fingerprintFactory)
         {
             FingerprintFactory = fingerprintFactory;
         }
 
-        public abstract HardwareFingerprint Get();
+        public abstract Fingerprint Get();
 
         public abstract SupportedPlatforms SupportedPlatforms { get; }
     }

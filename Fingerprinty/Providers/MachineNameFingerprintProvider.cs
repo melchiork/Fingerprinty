@@ -4,11 +4,11 @@ namespace Fingerprinty
 {
     public class MachineNameFingerprintProvider : FingerprintProvider
     {
-        public MachineNameFingerprintProvider(HardwareFingerprintFactory fingerprintFactory) : base(fingerprintFactory)
+        public MachineNameFingerprintProvider(FingerprintFactory fingerprintFactory) : base(fingerprintFactory)
         {
         }
 
-        public override HardwareFingerprint Get()
+        public override Fingerprint Get()
         {
             var machineName = Environment.MachineName;
 

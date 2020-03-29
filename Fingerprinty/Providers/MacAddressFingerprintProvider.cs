@@ -7,11 +7,11 @@ namespace Fingerprinty
 {
     public class MacAddressFingerprintProvider : FingerprintProvider
     {
-        public MacAddressFingerprintProvider(HardwareFingerprintFactory fingerprintFactory) : base(fingerprintFactory)
+        public MacAddressFingerprintProvider(FingerprintFactory fingerprintFactory) : base(fingerprintFactory)
         {
         }
 
-        public override HardwareFingerprint Get()
+        public override Fingerprint Get()
         {
             var allCombinedMAcAddresses = GetAllCombinedMacAddresses();
 

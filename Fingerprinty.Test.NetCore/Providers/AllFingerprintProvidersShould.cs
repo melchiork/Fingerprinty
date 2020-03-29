@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Fingerprinty.Test.NetCore.Providers
 {
-    public abstract class AllHardwareProvidersShould
+    public abstract class AllFingerprintProvidersShould
     {
         protected abstract FingerprintProvider FingerprintProvider { get; }
 
@@ -20,23 +20,23 @@ namespace Fingerprinty.Test.NetCore.Providers
         }
 
         [SkippableFact]
-        public void ReturnHardwareFingerprintWithFixedStringValueLength()
+        public void ReturnFingerprintWithFixedStringValueLength()
         {
             Skip.If(FingerprintProvider.SupportedPlatforms.IsSupportedOnCurrentRuntime() == false, "Not supported on current OS platform.");
 
-            var hardwareFingerprint = FingerprintProvider.Get();
+            var fingerprint = FingerprintProvider.Get();
 
-            hardwareFingerprint.Value.Should().HaveLength(19);
+            fingerprint.Value.Should().HaveLength(19);
         }
 
         [SkippableFact]
-        public void ReturnHardwareFingerprintMAtchingPattern()
+        public void ReturnFingerprintMatchingPattern()
         {
             Skip.If(FingerprintProvider.SupportedPlatforms.IsSupportedOnCurrentRuntime() == false, "Not supported on current OS platform.");
 
-            var hardwareFingerprint = FingerprintProvider.Get();
+            var fingerprint = FingerprintProvider.Get();
 
-            hardwareFingerprint.Value.Should().MatchRegex("[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}");
+            fingerprint.Value.Should().MatchRegex("[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}");
         }
     }
 }

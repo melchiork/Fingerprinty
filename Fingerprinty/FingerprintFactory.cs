@@ -3,9 +3,9 @@ using System.Text;
 
 namespace Fingerprinty
 {
-    public abstract class HardwareFingerprintFactory
+    public abstract class FingerprintFactory
     {
-        public virtual HardwareFingerprint Create(string text)
+        public virtual Fingerprint Create(string text)
         {
             if (string.IsNullOrEmpty(text))
             {
@@ -17,6 +17,6 @@ namespace Fingerprinty
             return Create(bytes);
         }
 
-        public abstract HardwareFingerprint Create(byte[] bytes);
+        public abstract Fingerprint Create(byte[] bytes);
     }
 }

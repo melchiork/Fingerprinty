@@ -7,11 +7,11 @@ namespace Fingerprinty
     {
         public override SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
 
-        public DriveFingerprintProvider(HardwareFingerprintFactory fingerprintFactory) : base(fingerprintFactory)
+        public DriveFingerprintProvider(FingerprintFactory fingerprintFactory) : base(fingerprintFactory)
         {
         }
 
-        public override HardwareFingerprint Get()
+        public override Fingerprint Get()
         {
             var cDriveSerial = GetCDriveSerial();
 

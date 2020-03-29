@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Fingerprinty.Test.NetCore.Providers
 {
-    public class MachineNameFingerprintProviderShould : AllHardwareProvidersShould
+    public class MachineNameFingerprintProviderShould : AllFingerprintProvidersShould
     {
         protected override FingerprintProvider FingerprintProvider { get; } =
             FingerprintProviderFactory.Default.CreateMachineNameProvider();

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Fingerprinty
 {
-    internal class Sha512HardwareFingerprintFactory : HardwareFingerprintFactory
+    internal class Sha512FingerprintFactory : FingerprintFactory
     {
-        public override HardwareFingerprint Create(byte[] bytes)
+        public override Fingerprint Create(byte[] bytes)
         {
             if (bytes.Length == 0)
             {
@@ -16,7 +16,7 @@ namespace Fingerprinty
             var hashText = ComputeHash(bytes);
             var fingerprintValue = Transform(hashText);
 
-            return new HardwareFingerprint(fingerprintValue);
+            return new Fingerprint(fingerprintValue);
         }
 
         private static string ComputeHash(byte[] bytes)

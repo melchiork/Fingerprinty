@@ -16,6 +16,6 @@
         public virtual FingerprintProvider CreateWindowsProductIdProvider() 
             => new WindowsProductIdFingerprintProvider(CreateFingerprintFactory());
 
-        private HardwareFingerprintFactory CreateFingerprintFactory() => new Sha512HardwareFingerprintFactory();
+        private FingerprintFactory CreateFingerprintFactory() => new Sha512FingerprintFactory();
     }
 }
