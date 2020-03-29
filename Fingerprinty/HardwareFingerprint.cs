@@ -5,8 +5,6 @@ namespace Fingerprinty
 {
     public class HardwareFingerprint : IEquatable<HardwareFingerprint>
     {
-        public static int ValueLength { get; } = 19;
-
         public static Regex Pattern { get; } = new Regex("[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}",
             RegexOptions.CultureInvariant | RegexOptions.Compiled);
 
@@ -25,7 +23,7 @@ namespace Fingerprinty
         /// </summary>
         public virtual string Value { get; }
 
-        public bool Equals(HardwareFingerprint other)
+        public virtual bool Equals(HardwareFingerprint other)
         {
             if (other is null) return false;
             if (ReferenceEquals(this, other)) return true;

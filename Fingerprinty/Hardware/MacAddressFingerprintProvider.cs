@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 
@@ -22,7 +23,7 @@ namespace Fingerprinty.Hardware
         {
             var allNetworkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
 
-            if (allNetworkInterfaces.Length < 1) throw new FingerprintyException("No network interfaces found.");
+            if (allNetworkInterfaces.Length < 1) throw new InvalidOperationException("No network interfaces found.");
 
             var macAddressBytes =
                 allNetworkInterfaces

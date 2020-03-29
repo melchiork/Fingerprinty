@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Management;
 
 namespace Fingerprinty.Hardware
@@ -30,7 +31,7 @@ namespace Fingerprinty.Hardware
             }
             catch (Exception ex)
             {
-                throw new FingerprintyException("Not possible to find disk C:.", ex);
+                throw new InvalidOperationException("Not possible to find disk C:.", ex);
             }
         }
     }

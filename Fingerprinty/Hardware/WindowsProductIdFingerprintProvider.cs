@@ -3,7 +3,7 @@ using Microsoft.Win32;
 
 namespace Fingerprinty.Hardware
 {
-    internal class WindowsProductIdFingerprintProvider : HardwareFingerprintProvider
+    public class WindowsProductIdFingerprintProvider : HardwareFingerprintProvider
     {
         public override SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
 
@@ -28,10 +28,10 @@ namespace Fingerprinty.Hardware
             }
             catch (Exception ex)
             {
-                throw new FingerprintyException("Unable to calculate ProductId.", ex);
+                throw new InvalidOperationException("Unable to calculate ProductId.", ex);
             }
 
-            if (productId == null) throw new FingerprintyException("ProductId is null.");
+            if (productId == null) throw new InvalidOperationException("ProductId is null.");
 
             return productId;
         }
