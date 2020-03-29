@@ -5,8 +5,8 @@ namespace Fingerprinty.Test.NetCore.Providers
 {
     public class MacAddressFingerprintProviderShould : AllFingerprintProvidersShould
     {
-        protected override FingerprintProvider FingerprintProvider { get; } = 
-            FingerprintProviderFactory.Default.CreateMacAddressProvider();
+        protected override FingerprintProvider FingerprintProvider { get; } 
+            = FingerprintProviderFactory.Default.CreateMacAddressProvider();
 
         [Fact]
         public void SupportLinuxAndWindows()

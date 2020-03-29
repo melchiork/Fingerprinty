@@ -2,7 +2,8 @@
 {
     public class FingerprintProviderFactory
     {
-        public static FingerprintProviderFactory Default { get; } = new FingerprintProviderFactory();
+        public static FingerprintProviderFactory Default { get; } 
+            = new FingerprintProviderFactory();
         
         public virtual FingerprintProvider CreateDriveProvider() 
             => new DriveFingerprintProvider(CreateFingerprintFactory());
@@ -16,6 +17,7 @@
         public virtual FingerprintProvider CreateWindowsProductIdProvider() 
             => new WindowsProductIdFingerprintProvider(CreateFingerprintFactory());
 
-        private FingerprintFactory CreateFingerprintFactory() => new Sha512FingerprintFactory();
+        private static FingerprintFactory CreateFingerprintFactory() 
+            => new Sha512FingerprintFactory();
     }
 }

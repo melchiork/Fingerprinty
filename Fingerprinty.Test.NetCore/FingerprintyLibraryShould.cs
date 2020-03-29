@@ -27,7 +27,7 @@ namespace Fingerprinty.Test.NetCore
                     typeof(Fingerprint),
                     typeof(FingerprintProviderFactory),
                     typeof(FingerprintFactory),
-                    typeof(SupportedPlatforms),
+                    typeof(SupportedPlatforms)
                 });
         }
     }
