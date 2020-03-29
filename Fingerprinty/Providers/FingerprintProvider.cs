@@ -1,12 +1,12 @@
-﻿namespace Fingerprinty.Hardware
+﻿namespace Fingerprinty
 {
-    public abstract class HardwareFingerprintProvider
+    public abstract class FingerprintProvider
     {
         private protected readonly HardwareFingerprintFactory FingerprintFactory;
 
-        protected HardwareFingerprintProvider()
+        protected FingerprintProvider(HardwareFingerprintFactory fingerprintFactory)
         {
-            FingerprintFactory = new HardwareFingerprintFactory();
+            FingerprintFactory = fingerprintFactory;
         }
 
         public abstract HardwareFingerprint Get();

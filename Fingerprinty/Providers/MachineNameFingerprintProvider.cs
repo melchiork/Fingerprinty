@@ -1,9 +1,13 @@
 ﻿using System;
 
-namespace Fingerprinty.Hardware
+namespace Fingerprinty
 {
-    public class MachineNameFingerprintProvider : HardwareFingerprintProvider
+    public class MachineNameFingerprintProvider : FingerprintProvider
     {
+        public MachineNameFingerprintProvider(HardwareFingerprintFactory fingerprintFactory) : base(fingerprintFactory)
+        {
+        }
+
         public override HardwareFingerprint Get()
         {
             var machineName = Environment.MachineName;

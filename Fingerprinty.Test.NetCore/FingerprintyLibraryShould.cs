@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Fingerprinty.Hardware;
 using FluentAssertions;
 using FluentAssertions.Types;
 using Xunit;
@@ -24,9 +23,10 @@ namespace Fingerprinty.Test.NetCore
                     typeof(MacAddressFingerprintProvider),
                     typeof(MachineNameFingerprintProvider),
                     typeof(WindowsProductIdFingerprintProvider),
-                    typeof(HardwareFingerprintProvider),
+                    typeof(FingerprintProvider),
                     typeof(HardwareFingerprint),
                     typeof(FingerprintProviderFactory),
+                    typeof(HardwareFingerprintFactory),
                     typeof(SupportedPlatforms),
                 });
         }

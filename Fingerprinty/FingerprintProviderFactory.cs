@@ -1,14 +1,21 @@
-﻿using Fingerprinty.Hardware;
-
-namespace Fingerprinty
+﻿namespace Fingerprinty
 {
     public class FingerprintProviderFactory
     {
         public static FingerprintProviderFactory Default { get; } = new FingerprintProviderFactory();
+        
+        public virtual FingerprintProvider CreateDriveProvider() 
+            => new DriveFingerprintProvider(CreateFingerprintFactory());
 
-        public virtual HardwareFingerprintProvider CreateDriveProvider() => new DriveFingerprintProvider();
-        public virtual HardwareFingerprintProvider CreateMacAddressProvider() => new MacAddressFingerprintProvider();
-        public virtual HardwareFingerprintProvider CreateMachineNameProvider() => new MachineNameFingerprintProvider();
-        public virtual HardwareFingerprintProvider CreateWindowsProductIdProvider() => new WindowsProductIdFingerprintProvider();
+        public virtual FingerprintProvider CreateMacAddressProvider() 
+            => new MacAddressFingerprintProvider(CreateFingerprintFactory());
+
+        public virtual FingerprintProvider CreateMachineNameProvider() 
+            => new MachineNameFingerprintProvider(CreateFingerprintFactory());
+
+        public virtual FingerprintProvider CreateWindowsProductIdProvider() 
+            => new WindowsProductIdFingerprintProvider(CreateFingerprintFactory());
+
+        private HardwareFingerprintFactory CreateFingerprintFactory() => new Sha512HardwareFingerprintFactory();
     }
 }

@@ -1,12 +1,12 @@
-﻿using Fingerprinty.Hardware;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Xunit;
 
-namespace Fingerprinty.Test.NetCore.Hardware
+namespace Fingerprinty.Test.NetCore.Providers
 {
     public class DriveFingerprintProviderShould : AllHardwareProvidersShould
     {
-        protected override HardwareFingerprintProvider FingerprintProvider { get; } = new DriveFingerprintProvider();
+        protected override FingerprintProvider FingerprintProvider { get; } =
+            FingerprintProviderFactory.Default.CreateDriveProvider();
 
         [Fact]
         public void SupportOnlyWindows()

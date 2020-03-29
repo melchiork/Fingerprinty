@@ -1,12 +1,15 @@
 ﻿using System;
-using System.IO;
 using System.Management;
 
-namespace Fingerprinty.Hardware
+namespace Fingerprinty
 {
-    public class DriveFingerprintProvider : HardwareFingerprintProvider
+    public class DriveFingerprintProvider : FingerprintProvider
     {
         public override SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
+
+        public DriveFingerprintProvider(HardwareFingerprintFactory fingerprintFactory) : base(fingerprintFactory)
+        {
+        }
 
         public override HardwareFingerprint Get()
         {

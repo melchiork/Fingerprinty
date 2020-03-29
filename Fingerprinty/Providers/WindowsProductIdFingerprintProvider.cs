@@ -1,11 +1,15 @@
 ﻿using System;
 using Microsoft.Win32;
 
-namespace Fingerprinty.Hardware
+namespace Fingerprinty
 {
-    public class WindowsProductIdFingerprintProvider : HardwareFingerprintProvider
+    public class WindowsProductIdFingerprintProvider : FingerprintProvider
     {
         public override SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
+
+        public WindowsProductIdFingerprintProvider(HardwareFingerprintFactory fingerprintFactory) : base(fingerprintFactory)
+        {
+        }
 
         public override HardwareFingerprint Get()
         {

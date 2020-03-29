@@ -3,10 +3,14 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 
-namespace Fingerprinty.Hardware
+namespace Fingerprinty
 {
-    public class MacAddressFingerprintProvider : HardwareFingerprintProvider
+    public class MacAddressFingerprintProvider : FingerprintProvider
     {
+        public MacAddressFingerprintProvider(HardwareFingerprintFactory fingerprintFactory) : base(fingerprintFactory)
+        {
+        }
+
         public override HardwareFingerprint Get()
         {
             var allCombinedMAcAddresses = GetAllCombinedMacAddresses();
@@ -34,5 +38,6 @@ namespace Fingerprinty.Hardware
 
             return macAddressBytes;
         }
+
     }
 }
