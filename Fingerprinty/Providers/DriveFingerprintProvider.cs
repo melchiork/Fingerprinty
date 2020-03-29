@@ -20,22 +20,28 @@ namespace Fingerprinty
 
         private static string GetCDriveSerial()
         {
+            string volumeSerial;
+
             try
             {
-                string volumeSerial;
                 using (var disk = new ManagementObject(@"win32_logicaldisk.deviceid=""C:"""))
                 {
                     disk.Get();
                     volumeSerial = disk["VolumeSerialNumber"].ToString();
                     disk.Dispose();
                 }
-
-                return volumeSerial;
             }
             catch (Exception ex)
             {
                 throw new InvalidOperationException("Not possible to find disk C:.", ex);
             }
+
+            if (string.IsNullOrEmpty(volumeSerial))
+            {
+                throw new InvalidOperationException("Volume Serial Number for cDrive is null or empty.");
+            }
+
+            return volumeSerial;
         }
     }
 }
