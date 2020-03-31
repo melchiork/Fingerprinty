@@ -7,6 +7,7 @@ namespace Fingerprinty
 {
     /// <summary>
     /// Calculates <see cref="Fingerprint"/> based on combined mac addresses of all attached network cards.
+    /// MAC address can be easily spoofed. Adding or removing a USB WiFi dongle or virtual adapter will also change provided fingerprint.
     /// The MAC addresses will be always processed in the same sequence.
     /// </summary>
     public class AllMacAddressesFingerprintProvider : FingerprintProvider
@@ -17,9 +18,9 @@ namespace Fingerprinty
 
         public override Fingerprint Get()
         {
-            var allCombinedMAcAddresses = GetAllCombinedMacAddresses();
+            var allCombinedMacAddresses = GetAllCombinedMacAddresses();
 
-            var addressesText = Encoding.UTF8.GetString(allCombinedMAcAddresses);
+            var addressesText = Encoding.UTF8.GetString(allCombinedMacAddresses);
 
             return FingerprintFactory.Create(addressesText);
         }

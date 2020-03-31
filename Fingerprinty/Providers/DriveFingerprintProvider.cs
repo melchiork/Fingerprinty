@@ -3,7 +3,7 @@
 namespace Fingerprinty
 {
     /// <summary>
-    /// Calculates <see cref="Fingerprint"/> based on serial number of c drive.
+    /// Calculates <see cref="Fingerprint"/> based on serial number of the c drive.
     /// </summary>
     public class DriveFingerprintProvider : FingerprintProvider
     {

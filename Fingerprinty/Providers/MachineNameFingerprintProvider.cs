@@ -3,7 +3,7 @@
 namespace Fingerprinty
 {
     /// <summary>
-    /// Calculates <see cref="Fingerprint"/> based on the machine name.
+    /// Calculates <see cref="Fingerprint"/> based on the machine (PC) name.
     /// The machine name can be easily changed by the machine user.
     /// </summary>
     public class MachineNameFingerprintProvider : FingerprintProvider

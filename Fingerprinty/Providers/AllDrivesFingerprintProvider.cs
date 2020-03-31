@@ -7,6 +7,7 @@ namespace Fingerprinty
     /// <summary>
     /// Calculates <see cref="Fingerprint"/> based on serial numbers of all fixed drives.
     /// The serial numbers will be always processed in the same sequence.
+    /// Pendrives, network drives, CD-Roms etc. are not fixed drives.
     /// </summary>
     public class AllDrivesFingerprintProvider : FingerprintProvider
     {
