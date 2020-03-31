@@ -7,22 +7,22 @@ namespace Fingerprinty
         public static FingerprintProviderFactory Default { get; } 
             = new FingerprintProviderFactory();
 
-        public virtual FingerprintProvider CreateAllDrivesFingerprintProvider()
-            => new AllDrivesFingerprintProvider(CreateFingerprintFactory(), new WindowsDriveSerialService());
+        public virtual AllDrivesFingerprintProvider CreateAllDrivesFingerprintProvider()
+            => new AllDrivesFingerprintProvider(CreateSha512FingerprintFactory(), new WindowsDriveSerialService());
 
-        public virtual FingerprintProvider CreateDriveProvider() 
-            => new DriveFingerprintProvider(CreateFingerprintFactory(), new WindowsDriveSerialService());
+        public virtual DriveFingerprintProvider CreateDriveProvider() 
+            => new DriveFingerprintProvider(CreateSha512FingerprintFactory(), new WindowsDriveSerialService());
 
-        public virtual FingerprintProvider CreateMacAddressProvider() 
-            => new AllMacAddressesFingerprintProvider(CreateFingerprintFactory());
+        public virtual AllMacAddressesFingerprintProvider CreateMacAddressProvider() 
+            => new AllMacAddressesFingerprintProvider(CreateSha512FingerprintFactory());
 
-        public virtual FingerprintProvider CreateMachineNameProvider() 
-            => new MachineNameFingerprintProvider(CreateFingerprintFactory());
+        public virtual MachineNameFingerprintProvider CreateMachineNameProvider() 
+            => new MachineNameFingerprintProvider(CreateSha512FingerprintFactory());
 
-        public virtual FingerprintProvider CreateWindowsProductIdProvider() 
-            => new WindowsProductIdFingerprintProvider(CreateFingerprintFactory());
+        public virtual WindowsProductIdFingerprintProvider CreateWindowsProductIdProvider() 
+            => new WindowsProductIdFingerprintProvider(CreateSha512FingerprintFactory());
 
-        private static FingerprintFactory CreateFingerprintFactory() 
+        private static FingerprintFactory CreateSha512FingerprintFactory() 
             => new Sha512FingerprintFactory();
     }
 }
