@@ -14,7 +14,7 @@ namespace Fingerprinty
             => new DriveFingerprintProvider(CreateFingerprintFactory(), new WindowsDriveSerialService());
 
         public virtual FingerprintProvider CreateMacAddressProvider() 
-            => new MacAddressFingerprintProvider(CreateFingerprintFactory());
+            => new AllMacAddressesFingerprintProvider(CreateFingerprintFactory());
 
         public virtual FingerprintProvider CreateMachineNameProvider() 
             => new MachineNameFingerprintProvider(CreateFingerprintFactory());

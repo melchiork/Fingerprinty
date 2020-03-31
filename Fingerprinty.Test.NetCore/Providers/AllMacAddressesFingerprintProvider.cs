@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Fingerprinty.Test.NetCore.Providers
 {
-    public class MacAddressFingerprintProviderShould : AllFingerprintProvidersShould
+    public class AllMacAddressesFingerprintProvider : AllFingerprintProvidersShould
     {
         protected override FingerprintProvider FingerprintProvider { get; } 
             = FingerprintProviderFactory.Default.CreateMacAddressProvider();

@@ -5,9 +5,13 @@ using System.Text;
 
 namespace Fingerprinty
 {
-    public class MacAddressFingerprintProvider : FingerprintProvider
+    /// <summary>
+    /// Calculates <see cref="Fingerprint"/> based on combined mac addresses of all attached network cards.
+    /// The MAC addresses will be always processed in the same sequence.
+    /// </summary>
+    public class AllMacAddressesFingerprintProvider : FingerprintProvider
     {
-        public MacAddressFingerprintProvider(FingerprintFactory fingerprintFactory) : base(fingerprintFactory)
+        public AllMacAddressesFingerprintProvider(FingerprintFactory fingerprintFactory) : base(fingerprintFactory)
         {
         }
 

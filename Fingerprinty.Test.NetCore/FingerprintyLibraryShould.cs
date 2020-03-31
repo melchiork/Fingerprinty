@@ -23,7 +23,7 @@ namespace Fingerprinty.Test.NetCore
                     typeof(AllDrivesFingerprintProvider),
                     typeof(DriveFingerprintProvider),
                     typeof(IWindowsDriveSerialService),
-                    typeof(MacAddressFingerprintProvider),
+                    typeof(AllMacAddressesFingerprintProvider),
                     typeof(MachineNameFingerprintProvider),
                     typeof(WindowsProductIdFingerprintProvider),
                     typeof(FingerprintProvider),

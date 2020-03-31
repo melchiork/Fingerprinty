@@ -2,6 +2,9 @@
 
 namespace Fingerprinty
 {
+    /// <summary>
+    /// Calculates <see cref="Fingerprint"/> based on serial number of c drive.
+    /// </summary>
     public class DriveFingerprintProvider : FingerprintProvider
     {
         private readonly IWindowsDriveSerialService _windowsDriveSerialService;

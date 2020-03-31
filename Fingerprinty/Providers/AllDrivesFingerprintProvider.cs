@@ -4,6 +4,10 @@ using Fingerprinty.HDD;
 
 namespace Fingerprinty
 {
+    /// <summary>
+    /// Calculates <see cref="Fingerprint"/> based on serial numbers of all fixed drives.
+    /// The serial numbers will be always processed in the same sequence.
+    /// </summary>
     public class AllDrivesFingerprintProvider : FingerprintProvider
     {
         private readonly IWindowsDriveSerialService _windowsDriveSerialService;
