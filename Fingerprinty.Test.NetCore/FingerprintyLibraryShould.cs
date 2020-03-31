@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Fingerprinty.HDD;
 using FluentAssertions;
 using FluentAssertions.Types;
 using Xunit;
@@ -19,7 +20,9 @@ namespace Fingerprinty.Test.NetCore
                 .Should()
                 .BeEquivalentTo(new List<Type>
                 {
+                    typeof(AllDrivesFingerprintProvider),
                     typeof(DriveFingerprintProvider),
+                    typeof(IWindowsDriveSerialService),
                     typeof(MacAddressFingerprintProvider),
                     typeof(MachineNameFingerprintProvider),
                     typeof(WindowsProductIdFingerprintProvider),

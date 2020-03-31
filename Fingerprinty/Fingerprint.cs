@@ -29,6 +29,8 @@ namespace Fingerprinty
         /// </summary>
         public string Value { get; }
 
+        public override string ToString() => Value;
+
         public virtual bool Equals(Fingerprint other)
         {
             if (other is null) return false;

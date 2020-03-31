@@ -26,6 +26,7 @@ namespace Fingerprinty.Test.NetCore.Providers
 
             var fingerprint = FingerprintProvider.Get();
 
+            fingerprint.Should().NotBeNull();
             fingerprint.Value.Should().HaveLength(19);
         }
 
@@ -36,6 +37,7 @@ namespace Fingerprinty.Test.NetCore.Providers
 
             var fingerprint = FingerprintProvider.Get();
 
+            fingerprint.Should().NotBeNull();
             fingerprint.Value.Should().MatchRegex("[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}");
         }
     }
