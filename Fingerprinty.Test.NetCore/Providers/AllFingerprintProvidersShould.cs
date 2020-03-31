@@ -10,7 +10,7 @@ namespace Fingerprinty.Test.NetCore.Providers
         [SkippableFact]
         public void ReturnTheSameValueIfCalledTwice()
         {
-            Skip.If(FingerprintProvider.SupportedPlatforms.IsSupportedOnCurrentRuntime() == false, "Not supported on current OS platform.");
+            Skip.IfPlatformIsNotSupported(FingerprintProvider);
 
             var first = FingerprintProvider.Get();
 
@@ -22,7 +22,7 @@ namespace Fingerprinty.Test.NetCore.Providers
         [SkippableFact]
         public void ReturnFingerprintWithFixedStringValueLength()
         {
-            Skip.If(FingerprintProvider.SupportedPlatforms.IsSupportedOnCurrentRuntime() == false, "Not supported on current OS platform.");
+            Skip.IfPlatformIsNotSupported(FingerprintProvider);
 
             var fingerprint = FingerprintProvider.Get();
 
@@ -33,7 +33,7 @@ namespace Fingerprinty.Test.NetCore.Providers
         [SkippableFact]
         public void ReturnFingerprintMatchingPattern()
         {
-            Skip.If(FingerprintProvider.SupportedPlatforms.IsSupportedOnCurrentRuntime() == false, "Not supported on current OS platform.");
+            Skip.IfPlatformIsNotSupported(FingerprintProvider);
 
             var fingerprint = FingerprintProvider.Get();
 
