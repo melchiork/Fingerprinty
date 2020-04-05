@@ -9,12 +9,15 @@ namespace Fingerprinty
     /// </summary>
     public class WindowsProductIdFingerprintProvider : FingerprintProvider
     {
+        /// <inheritdoc />
         public override SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
 
+        /// <inheritdoc />
         public WindowsProductIdFingerprintProvider(FingerprintFactory fingerprintFactory) : base(fingerprintFactory)
         {
         }
 
+        /// <inheritdoc />
         public override Fingerprint Get()
         {
             var productId = GetProductId();

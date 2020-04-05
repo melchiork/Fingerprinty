@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fingerprinty</name>
+    </assembly>
+    <members>
+        <member name="T:Fingerprinty.Fingerprint">
+            <summary>
+            Potentially unique fingerprint of a machine.
+            </summary>
+        </member>
+        <member name="P:Fingerprinty.Fingerprint.Pattern">
+            <summary>
+            Pattern used for fingerprint generation. E.g. ab12-ca9a-5f00-d12d
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.Fingerprint.#ctor(System.String)">
+            <summary>
+            Default constructor, validates the value against the <see cref="P:Fingerprinty.Fingerprint.Pattern"/>.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Fingerprinty.Fingerprint.#ctor(System.String,System.Func{System.String,System.Boolean})">
+            <summary>
+            Constructor, validates the value against arbitrary function.
+            </summary>
+            <param name="value">Value of a fingerprint.</param>
+            <param name="isValid">Method run to check if the value provided matches the fingerprint "shape".</param>
+            <exception cref="T:System.ArgumentException">Thrown when the values doesn't match isValid.</exception>
+        </member>
+        <member name="P:Fingerprinty.Fingerprint.Value">
+            <summary>
+            Human readable value of <see cref="T:Fingerprinty.Fingerprint"/>
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.Fingerprint.ToString">
+            <summary>
+            
+            </summary>
+            <returns><see cref="T:System.String"/> representation fo the <see cref="T:Fingerprinty.Fingerprint"/>.</returns>
+        </member>
+        <member name="M:Fingerprinty.Fingerprint.Equals(Fingerprinty.Fingerprint)">
+            <inheritdoc cref="M:System.IEquatable`1.Equals(`0)"/>
+        </member>
+        <member name="M:Fingerprinty.Fingerprint.Equals(System.Object)">
+            <inheritdoc cref="M:System.Object.Equals(System.Object)"/>
+        </member>
+        <member name="M:Fingerprinty.Fingerprint.GetHashCode">
+            <summary>
+            Calculates hash code.
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:Fingerprinty.FingerprintFactory">
+            <summary>
+            Base for factories that can create new <see cref="T:Fingerprinty.Fingerprint"/> instances.
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.FingerprintFactory.Create(System.String)">
+            <summary>
+            Creates <see cref="T:Fingerprinty.Fingerprint"/> instance based on a string.
+            </summary>
+            <remarks>
+            The default version of this method will encode the string using UTF8 and passes them to <see cref="M:Fingerprinty.FingerprintFactory.Create(System.Byte[])"/>
+            </remarks>
+            <param name="text">The <see cref="T:System.String"/> input for fingerprint calculation.</param>
+            <returns>New see <see cref="T:Fingerprinty.Fingerprint"/> instance.</returns>
+            <exception cref="T:System.ArgumentException">Throws when argument is null or empty.</exception>
+        </member>
+        <member name="M:Fingerprinty.FingerprintFactory.Create(System.Byte[])">
+            <summary>
+            Creates a <see cref="T:Fingerprinty.Fingerprint"/> instance based on array of bytes.
+            </summary>
+            <param name="bytes">Byte representation of fingerprint.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Fingerprinty.FingerprintProviderFactory">
+            <summary>
+            Factory that allows of parameters-less creation of various different <seealso cref="T:Fingerprinty.FingerprintProvider"/> implementations.
+            </summary>
+        </member>
+        <member name="P:Fingerprinty.FingerprintProviderFactory.Default">
+            <summary>
+            Default instance of the factory.
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.FingerprintProviderFactory.CreateAllDrivesFingerprintProvider">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fingerprinty.FingerprintProviderFactory.CreateDriveProvider">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fingerprinty.FingerprintProviderFactory.CreateMacAddressProvider">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fingerprinty.FingerprintProviderFactory.CreateMachineNameProvider">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fingerprinty.FingerprintProviderFactory.CreateWindowsProductIdProvider">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Fingerprinty.HDD.IWindowsDriveSerialService">
+            <summary>
+            Abstraction over Windows API for getting drives serial numbers. 
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.HDD.IWindowsDriveSerialService.GetDrivesSerial(System.Char[])">
+            <summary>
+            Gets serial number for all drives with assigned drive letter.
+            </summary>
+            <param name="driveLetters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Fingerprinty.AllDrivesFingerprintProvider">
+            <summary>
+            Calculates <see cref="T:Fingerprinty.Fingerprint"/> based on serial numbers of all fixed drives.
+            The serial numbers will be always processed in the same sequence.
+            Pendrives, network drives, CD-Roms etc. are not fixed drives.
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.AllDrivesFingerprintProvider.#ctor(Fingerprinty.FingerprintFactory,Fingerprinty.HDD.IWindowsDriveSerialService)">
+            <inheritdoc />
+        </member>
+        <member name="P:Fingerprinty.AllDrivesFingerprintProvider.SupportedPlatforms">
+            <inheritdoc />
+        </member>
+        <member name="M:Fingerprinty.AllDrivesFingerprintProvider.Get">
+            <inheritdoc />
+        </member>
+        <member name="T:Fingerprinty.AllMacAddressesFingerprintProvider">
+            <summary>
+            Calculates <see cref="T:Fingerprinty.Fingerprint"/> based on combined mac addresses of all attached network cards.
+            MAC address can be easily spoofed. Adding or removing a USB WiFi dongle or virtual adapter will also change provided fingerprint.
+            The MAC addresses will be always processed in the same sequence.
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.AllMacAddressesFingerprintProvider.#ctor(Fingerprinty.FingerprintFactory)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fingerprinty.AllMacAddressesFingerprintProvider.Get">
+            <inheritdoc />
+        </member>
+        <member name="P:Fingerprinty.AllMacAddressesFingerprintProvider.SupportedPlatforms">
+            <inheritdoc />
+        </member>
+        <member name="T:Fingerprinty.DriveFingerprintProvider">
+            <summary>
+            Calculates <see cref="T:Fingerprinty.Fingerprint"/> based on serial number of the c drive.
+            </summary>
+        </member>
+        <member name="P:Fingerprinty.DriveFingerprintProvider.SupportedPlatforms">
+            <inheritdoc />
+        </member>
+        <member name="M:Fingerprinty.DriveFingerprintProvider.#ctor(Fingerprinty.FingerprintFactory,Fingerprinty.HDD.IWindowsDriveSerialService)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fingerprinty.DriveFingerprintProvider.Get">
+            <inheritdoc />
+        </member>
+        <member name="T:Fingerprinty.FingerprintProvider">
+            <summary>
+            Base for all classes that provide fingerprints.
+            </summary>
+        </member>
+        <member name="F:Fingerprinty.FingerprintProvider.FingerprintFactory">
+            <summary>
+            Instance of <see cref="F:Fingerprinty.FingerprintProvider.FingerprintFactory"/> that us sued to provide normalized fingerprints from arbitrary data.
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.FingerprintProvider.#ctor(Fingerprinty.FingerprintFactory)">
+            <summary>
+            Creates new instance of <seealso cref="T:Fingerprinty.FingerprintProvider"/>.
+            </summary>
+            <param name="fingerprintFactory"></param>
+        </member>
+        <member name="M:Fingerprinty.FingerprintProvider.Get">
+            <summary>
+            Get new fingerprint based on concrete implementation.
+            </summary>
+            <returns>A <see cref="T:Fingerprinty.Fingerprint"/></returns>
+        </member>
+        <member name="P:Fingerprinty.FingerprintProvider.SupportedPlatforms">
+            <summary>
+            THe platforms on which given <see cref="T:Fingerprinty.FingerprintProvider"/> works and has been tested.
+            </summary>
+        </member>
+        <member name="T:Fingerprinty.MachineNameFingerprintProvider">
+            <summary>
+            Calculates <see cref="T:Fingerprinty.Fingerprint"/> based on the machine (PC) name.
+            The machine name can be easily changed by the machine user.
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.MachineNameFingerprintProvider.#ctor(Fingerprinty.FingerprintFactory)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fingerprinty.MachineNameFingerprintProvider.Get">
+            <inheritdoc />
+        </member>
+        <member name="P:Fingerprinty.MachineNameFingerprintProvider.SupportedPlatforms">
+            <inheritdoc />
+        </member>
+        <member name="T:Fingerprinty.WindowsProductIdFingerprintProvider">
+            <summary>
+            Calculates <see cref="T:Fingerprinty.Fingerprint"/> based on the Windows ProductId.
+            The ProductId is generated by Windows during system installation.
+            </summary>
+        </member>
+        <member name="P:Fingerprinty.WindowsProductIdFingerprintProvider.SupportedPlatforms">
+            <inheritdoc />
+        </member>
+        <member name="M:Fingerprinty.WindowsProductIdFingerprintProvider.#ctor(Fingerprinty.FingerprintFactory)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fingerprinty.WindowsProductIdFingerprintProvider.Get">
+            <inheritdoc />
+        </member>
+        <member name="T:Fingerprinty.SupportedPlatforms">
+            <summary>
+            Platform(s) on which given <seealso cref="T:Fingerprinty.FingerprintProvider"/> is supported.
+            </summary>
+        </member>
+        <member name="F:Fingerprinty.SupportedPlatforms.Windows">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Fingerprinty.SupportedPlatforms.Linux">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

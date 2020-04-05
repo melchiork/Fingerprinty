@@ -13,14 +13,17 @@ namespace Fingerprinty
     {
         private readonly IWindowsDriveSerialService _windowsDriveSerialService;
 
+        /// <inheritdoc />
         public AllDrivesFingerprintProvider(FingerprintFactory fingerprintFactory,
             IWindowsDriveSerialService windowsDriveSerialService) : base(fingerprintFactory)
         {
             _windowsDriveSerialService = windowsDriveSerialService;
         }
 
+        /// <inheritdoc />
         public override SupportedPlatforms SupportedPlatforms { get; } = SupportedPlatforms.Windows;
 
+        /// <inheritdoc />
         public override Fingerprint Get()
         {
             var fixedDrives = DriveInfo

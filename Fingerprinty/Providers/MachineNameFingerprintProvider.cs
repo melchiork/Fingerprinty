@@ -8,10 +8,12 @@ namespace Fingerprinty
     /// </summary>
     public class MachineNameFingerprintProvider : FingerprintProvider
     {
+        /// <inheritdoc />
         public MachineNameFingerprintProvider(FingerprintFactory fingerprintFactory) : base(fingerprintFactory)
         {
         }
 
+        /// <inheritdoc />
         public override Fingerprint Get()
         {
             var machineName = Environment.MachineName;
@@ -19,6 +21,7 @@ namespace Fingerprinty
             return FingerprintFactory.Create(machineName);
         }
 
+        /// <inheritdoc />
         public override SupportedPlatforms SupportedPlatforms { get; } =
             SupportedPlatforms.Windows | SupportedPlatforms.Linux;
     }

@@ -1,7 +1,6 @@
 ﻿# API
-- [ ] Simple class for each case
-- [ ] Arbitrary but replicable combinations
-- [ ] Pluggable format
-- [ ] Plugabble calculation/hash function
-- [ ] Single namespace
-- [ ] Description and docs for each fingerprinting method
+- [x] Simple class for each case
+- [x] Pluggable format
+- [x] Plugabble calculation/hash function
+- [x] Single namespace
+- [x] Description and docs for each fingerprinting method

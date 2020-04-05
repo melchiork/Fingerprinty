@@ -12,11 +12,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
+    <DocumentationFile>D:\Projects\Fingerprinty\Fingerprinty\Fingerprinty.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
+    <DocumentationFile>D:\Projects\Fingerprinty\Fingerprinty\Fingerprinty.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

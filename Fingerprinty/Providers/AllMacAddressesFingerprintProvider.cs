@@ -12,10 +12,12 @@ namespace Fingerprinty
     /// </summary>
     public class AllMacAddressesFingerprintProvider : FingerprintProvider
     {
+        /// <inheritdoc />
         public AllMacAddressesFingerprintProvider(FingerprintFactory fingerprintFactory) : base(fingerprintFactory)
         {
         }
 
+        /// <inheritdoc />
         public override Fingerprint Get()
         {
             var allCombinedMacAddresses = GetAllCombinedMacAddresses();
@@ -25,6 +27,7 @@ namespace Fingerprinty
             return FingerprintFactory.Create(addressesText);
         }
 
+        /// <inheritdoc />
         public override SupportedPlatforms SupportedPlatforms { get; } =
             SupportedPlatforms.Linux | SupportedPlatforms.Windows;
 
