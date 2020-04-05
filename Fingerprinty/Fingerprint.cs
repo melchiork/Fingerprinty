@@ -18,7 +18,7 @@ namespace Fingerprinty
         /// Default constructor, validates the value against the <see cref="Pattern"/>.
         /// </summary>
         /// <param name="value"></param>
-        public Fingerprint(string value) 
+        internal Fingerprint(string value) 
             : this(value, x => Pattern.IsMatch(x))
         {
             
