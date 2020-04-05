@@ -4,8 +4,12 @@ using System.Text;
 
 namespace Fingerprinty
 {
+    /// <summary>
+    /// Default <see cref="FingerprintProvider"/> based on SHA 256 hash function.
+    /// </summary>
     internal class Sha512FingerprintFactory : FingerprintFactory
     {
+        /// <inheritdoc />
         public override Fingerprint Create(byte[] bytes)
         {
             if (bytes.Length == 0)

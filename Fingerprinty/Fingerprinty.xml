@@ -229,6 +229,14 @@
         <member name="M:Fingerprinty.WindowsProductIdFingerprintProvider.Get">
             <inheritdoc />
         </member>
+        <member name="T:Fingerprinty.Sha512FingerprintFactory">
+            <summary>
+            Default <see cref="T:Fingerprinty.FingerprintProvider"/> based on SHA 256 hash function.
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.Sha512FingerprintFactory.Create(System.Byte[])">
+            <inheritdoc />
+        </member>
         <member name="T:Fingerprinty.SupportedPlatforms">
             <summary>
             Platform(s) on which given <seealso cref="T:Fingerprinty.FingerprintProvider"/> is supported.
