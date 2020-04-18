@@ -1,6 +1,8 @@
 # Fingerprinty
 Fingerprinty is a library providing its users with various kinds of machine fingerprints. The library is .NET Standard and works with Windows and Linux albeit to a different extent.
 
+Fingerprinty is available from NuGet.org: [![NuGet version (Fingerprinty)](https://img.shields.io/nuget/v/Fingerprinty.svg?style=flat-square)](https://www.nuget.org/packages/Fingerprinty/)
+
 ## Supported Fingerprint Providers
 |Fingerprint Provider|Description|Supported Platforms|
 |---|---|---|
