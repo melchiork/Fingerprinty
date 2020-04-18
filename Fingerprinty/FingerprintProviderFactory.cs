@@ -31,7 +31,7 @@ namespace Fingerprinty
         /// 
         /// </summary>
         /// <returns></returns>
-        public virtual AllMacAddressesFingerprintProvider CreateMacAddressProvider() 
+        public virtual AllMacAddressesFingerprintProvider CreateAllMacAddressesProvider() 
             => new AllMacAddressesFingerprintProvider(CreateSha512FingerprintFactory());
 
         /// <summary>

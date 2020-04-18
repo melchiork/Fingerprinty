@@ -96,7 +96,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Fingerprinty.FingerprintProviderFactory.CreateMacAddressProvider">
+        <member name="M:Fingerprinty.FingerprintProviderFactory.CreateAllMacAddressesProvider">
             <summary>
             
             </summary>
