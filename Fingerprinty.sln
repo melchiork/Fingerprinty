@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fingerprinty", "Fingerprinty\Fingerprinty.csproj", "{0887877B-7F5B-4D74-9146-6B4F44ADBA66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fingerprinty", "Fingerprinty\Fingerprinty.csproj", "{0887877B-7F5B-4D74-9146-6B4F44ADBA66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fingerprinty.Test.NetCore", "Fingerprinty.Test.NetCore\Fingerprinty.Test.NetCore.csproj", "{07939116-2198-49E4-A2D8-9A8BA5A96E75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fingerprinty.Test.NetCore", "Fingerprinty.Test.NetCore\Fingerprinty.Test.NetCore.csproj", "{07939116-2198-49E4-A2D8-9A8BA5A96E75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8FBB377D-EEF2-44B6-9464-C10ADA607A16}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
