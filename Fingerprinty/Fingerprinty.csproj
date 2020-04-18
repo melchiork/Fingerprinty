@@ -6,7 +6,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/melchiork/Fingerprinty</PackageProjectUrl>
     <RepositoryUrl>https://github.com/melchiork/Fingerprinty</RepositoryUrl>
-    <Version>0.0.1</Version>
+    <Version>0.9.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
