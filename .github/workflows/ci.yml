@@ -21,7 +21,12 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Debug
     - name: Test with dotnet
-      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./bin/coverage/'
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/'
+    - name: Upload Code Coverage
+      uses: actions/upload-artifact@v1
+      with:
+        name: coverage_ubuntu
+        path: ./coverage
       
   build-windows:
 
@@ -36,4 +41,9 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Debug
     - name: Test with dotnet
-      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./bin/coverage/'
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/'
+    - name: Upload Code Coverage
+      uses: actions/upload-artifact@v1
+      with:
+        name: coverage_windows
+        path: ./coverage 
