@@ -22,11 +22,6 @@ jobs:
       run: dotnet build --configuration Debug
     - name: Test with dotnet
       run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./bin/coverage/'
-    - name: Upload Code Coverage
-      uses: actions/upload-artifact@v1
-      with:
-        name: coverage_ubuntu
-        path: Fingerprinty.Test.NetCore\bin\coverage
       
   build-windows:
 
@@ -42,8 +37,3 @@ jobs:
       run: dotnet build --configuration Debug
     - name: Test with dotnet
       run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./bin/coverage/'
-    - name: Upload Code Coverage
-      uses: actions/upload-artifact@v1
-      with:
-        name: coverage_windows
-        path: Fingerprinty.Test.NetCore\bin\coverage 
