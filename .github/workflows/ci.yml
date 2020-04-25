@@ -21,7 +21,7 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Debug
     - name: Test with dotnet
-      run: dotnet test
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/'
       
   build-windows:
 
@@ -36,4 +36,4 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Debug
     - name: Test with dotnet
-      run: dotnet test
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/'
