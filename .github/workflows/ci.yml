@@ -22,13 +22,10 @@ jobs:
       run: dotnet build --configuration Debug
     - name: Test with dotnet
       run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/'
-    - name: Directory Listing
-      run: gci -Recurse
-      shell: pwsh
     - name: Upload coverage details
       uses: actions/upload-artifact@v1
       with:
-        name: coverage
+        name: coverage-ubuntu
         path: ./Fingerprinty.Test.NetCore/coverage
 
       
@@ -46,11 +43,8 @@ jobs:
       run: dotnet build --configuration Debug
     - name: Test with dotnet
       run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/'
-    - name: Directory Listing
-      run: gci -Recurse
-      shell: pwsh
     - name: Upload coverage details
       uses: actions/upload-artifact@v1
       with:
-        name: coverage
+        name: coverage-windows
         path: ./Fingerprinty.Test.NetCore/coverage
