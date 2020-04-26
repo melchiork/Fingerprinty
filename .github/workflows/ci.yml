@@ -25,7 +25,7 @@ jobs:
     - name: Directory Listing
       run: gci -Recurse
       shell: pwsh
-    - name: Upload package
+    - name: Upload coverage details
       uses: actions/upload-artifact@v1
       with:
         name: coverage
@@ -49,3 +49,8 @@ jobs:
     - name: Directory Listing
       run: gci -Recurse
       shell: pwsh
+    - name: Upload coverage details
+      uses: actions/upload-artifact@v1
+      with:
+        name: coverage
+        path: ./Fingerprinty.Test.NetCore/coverage
