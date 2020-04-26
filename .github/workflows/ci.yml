@@ -25,6 +25,11 @@ jobs:
     - name: Directory Listing
       run: gci -Recurse
       shell: pwsh
+    - name: Upload package
+      uses: actions/upload-artifact@v1
+      with:
+        name: coverage
+        path: ./Fingerprinty.Test.NetCore/coverage
 
       
   build-windows:
