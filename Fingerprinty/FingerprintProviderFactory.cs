@@ -48,6 +48,13 @@ namespace Fingerprinty
         public virtual WindowsProductIdFingerprintProvider CreateWindowsProductIdProvider() 
             => new WindowsProductIdFingerprintProvider(CreateSha512FingerprintFactory());
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public FingerprintProvider CreateProcessorIdFingerprintProvider()
+            => new ProcessorIdFingerprintProvider(CreateSha512FingerprintFactory());
+
         private static FingerprintFactory CreateSha512FingerprintFactory() 
             => new Sha512FingerprintFactory();
     }

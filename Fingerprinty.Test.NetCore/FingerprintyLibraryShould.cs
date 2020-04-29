@@ -26,6 +26,7 @@ namespace Fingerprinty.Test.NetCore
                     typeof(AllMacAddressesFingerprintProvider),
                     typeof(MachineNameFingerprintProvider),
                     typeof(WindowsProductIdFingerprintProvider),
+                    typeof(ProcessorIdFingerprintProvider),
                     typeof(FingerprintProvider),
                     typeof(Fingerprint),
                     typeof(FingerprintProviderFactory),
