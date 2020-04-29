@@ -34,6 +34,33 @@ var provider = FingerprintProviderFactory.Default.CreateAllMacAddressesProvider(
 var supportedPlatforms = provider.SupportedPlatforms; //SupportedPlatforms.Linux | SupportedPlatforms.Windows
 ```
 
+## Custom Fingerprint Format
+If you would like to provide a custom fingerprint format you need to override two classes `FingerprintFactory` and `Fingerprint`.
+```csharp
+public class CustomFingerprintFactory : FingerprintFactory
+{
+  public override Fingerprint Create(byte[] bytes)
+  {
+    //custom code goes here
+  }
+  
+  //the Fingerprint Create(string text) will by default call the byte[] version internally. It's however possible to override this method as well
+}
+```
+In the `Fingerprint` class there is protected constructor which accepts a `string` and a `Func<string, bool>` which validates the first argument. Use it in the custom implementations. For example:
+```csharp
+public class AlwaysValidFingerprint : Fingerprint
+{
+  public AlwaysValidFingerprint(string value) : base(value, x => true)
+  {
+  }
+}
+```
+Each `FingerprintProvider` accepts instance of `FingerprintFactory` in its constructor.
+```csharp
+var provider = new MachineNameFingerprintProvider(CreateSha512FingerprintFactory());
+```
+
 # Build Status
 ![CI](https://github.com/melchiork/Fingerprinty/workflows/CI/badge.svg)
 ![Create NuGet package](https://github.com/melchiork/Fingerprinty/workflows/Create%20NuGet%20package/badge.svg)
