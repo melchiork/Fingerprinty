@@ -59,5 +59,14 @@ namespace Fingerprinty.Test.NetCore.Providers
                 return c => c.GetParameters().Select(p => p.ParameterType).Contains(typeof(FingerprintFactory));
             }
         }
+
+        [Fact]
+        public void OverrideSupportedPlatformsWithNonDefaultValue()
+        {
+            FingerprintProvider
+                .SupportedPlatforms
+                .Should()
+                .NotBe(default(SupportedPlatforms));
+        }
     }
 }
