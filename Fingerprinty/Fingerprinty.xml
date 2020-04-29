@@ -179,7 +179,7 @@
         </member>
         <member name="F:Fingerprinty.FingerprintProvider.FingerprintFactory">
             <summary>
-            Instance of <see cref="F:Fingerprinty.FingerprintProvider.FingerprintFactory"/> that us sued to provide normalized fingerprints from arbitrary data.
+            Instance of <see cref="F:Fingerprinty.FingerprintProvider.FingerprintFactory"/> that is used to provide normalized fingerprints from arbitrary data.
             </summary>
         </member>
         <member name="M:Fingerprinty.FingerprintProvider.#ctor(Fingerprinty.FingerprintFactory)">

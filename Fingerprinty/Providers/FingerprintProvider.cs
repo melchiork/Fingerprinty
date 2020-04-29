@@ -6,9 +6,9 @@
     public abstract class FingerprintProvider
     {
         /// <summary>
-        /// Instance of <see cref="FingerprintFactory"/> that us sued to provide normalized fingerprints from arbitrary data.
+        /// Instance of <see cref="FingerprintFactory"/> that is used to provide normalized fingerprints from arbitrary data.
         /// </summary>
-        protected internal readonly FingerprintFactory FingerprintFactory;
+        protected readonly FingerprintFactory FingerprintFactory;
 
         /// <summary>
         /// Creates new instance of <seealso cref="FingerprintProvider"/>.
