@@ -16,50 +16,43 @@ namespace Fingerprinty
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
-        public virtual AllDrivesFingerprintProvider CreateAllDrivesFingerprintProvider()
+        public virtual AllDrivesFingerprintProvider CreateAllDrivesProvider()
             => new AllDrivesFingerprintProvider(CreateSha512FingerprintFactory(), new WindowsDriveSerialService());
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
         public virtual DriveFingerprintProvider CreateDriveProvider() 
             => new DriveFingerprintProvider(CreateSha512FingerprintFactory(), new WindowsDriveSerialService());
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
         public virtual AllMacAddressesFingerprintProvider CreateAllMacAddressesProvider() 
             => new AllMacAddressesFingerprintProvider(CreateSha512FingerprintFactory());
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
         public virtual MachineNameFingerprintProvider CreateMachineNameProvider() 
             => new MachineNameFingerprintProvider(CreateSha512FingerprintFactory());
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
         public virtual WindowsProductIdFingerprintProvider CreateWindowsProductIdProvider() 
             => new WindowsProductIdFingerprintProvider(CreateSha512FingerprintFactory());
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
-        public FingerprintProvider CreateProcessorIdFingerprintProvider()
+        public ProcessorIdFingerprintProvider CreateProcessorIdProvider()
             => new ProcessorIdFingerprintProvider(CreateSha512FingerprintFactory());
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
-        public FingerprintProvider CreateMotherboardProvider()
+        public MotherboardFingerprintProvider CreateMotherboardProvider()
          => new MotherboardFingerprintProvider(CreateSha512FingerprintFactory());
 
         private static FingerprintFactory CreateSha512FingerprintFactory() 

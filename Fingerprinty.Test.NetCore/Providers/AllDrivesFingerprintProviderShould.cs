@@ -6,7 +6,7 @@ namespace Fingerprinty.Test.NetCore.Providers
     public class AllDrivesFingerprintProviderShould : AllFingerprintProvidersShould
     {
         protected override FingerprintProvider FingerprintProvider { get; } =
-            FingerprintProviderFactory.Default.CreateAllDrivesFingerprintProvider();
+            FingerprintProviderFactory.Default.CreateAllDrivesProvider();
 
         [Fact]
         public void SupportOnlyWindows()
