@@ -228,7 +228,7 @@
         </member>
         <member name="T:Fingerprinty.MotherboardFingerprintProvider">
             <summary>
-                Provides <seealso cref="T:Fingerprinty.Fingerprint" /> based on motherboard's serial.
+                Provides <see cref="T:Fingerprinty.Fingerprint" /> based on motherboard's serial.
             </summary>
         </member>
         <member name="M:Fingerprinty.MotherboardFingerprintProvider.#ctor(Fingerprinty.FingerprintFactory)">
