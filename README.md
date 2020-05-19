@@ -6,12 +6,13 @@ Fingerprinty is available from NuGet.org: [![NuGet version (Fingerprinty)](https
 ## Supported Fingerprint Providers
 |Fingerprint Provider|Description|Supported Platforms|
 |---|---|---|
-|AllMacAddressesFingerprintProvider|Provides fingerprint based on all MAC addresses of all network cards on the machine.|Windows and Linux|
-|MachineNameFingerprintProvider|Provides fingerprint based on the machine name. |Windows and Linux|
-|DriveFingerprintProvider|Provides fingerprint based on serial number of disk on which C drive is located.|Windows|
-|AllDrivesFingerprintProvider|Provides fingerprint based on serial numbers of all installed hard drives.|Windows|
-|WindowsProductIdFingerprintProvider|Provides fingerprint based on Windows ProductId.| Windows|
-|ProcessorIdFingerprintProvider|Provides fingerprint based on all processors ids. For single CPU it is based on single id, the CPU cores' number is not relevant.|Windows|
+|`AllMacAddressesFingerprintProvider`|Provides fingerprint based on all MAC addresses of all network cards on the machine.|Windows and Linux|
+|`MachineNameFingerprintProvider`|Provides fingerprint based on the machine name. |Windows and Linux|
+|`DriveFingerprintProvider`|Provides fingerprint based on serial number of disk on which C drive is located.|Windows|
+|`AllDrivesFingerprintProvider`|Provides fingerprint based on serial numbers of all installed hard drives.|Windows|
+|`WindowsProductIdFingerprintProvider`|Provides fingerprint based on Windows ProductId.| Windows|
+|`ProcessorIdFingerprintProvider`|Provides fingerprint based on all processors ids. For single CPU it is based on single id, the CPU cores' number is not relevant.|Windows|
+|`MotherboardFingerprintProvider`|Provides fingerprint based on motherboard's serial.|Windows|
 
 ## Fingerprint Format
 The default fingerprint format is matching `[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}` regex. For example `a035-1234-acda-09df`. 

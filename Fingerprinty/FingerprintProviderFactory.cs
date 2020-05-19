@@ -55,6 +55,13 @@ namespace Fingerprinty
         public FingerprintProvider CreateProcessorIdFingerprintProvider()
             => new ProcessorIdFingerprintProvider(CreateSha512FingerprintFactory());
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public FingerprintProvider CreateMotherboardProvider()
+         => new MotherboardFingerprintProvider(CreateSha512FingerprintFactory());
+
         private static FingerprintFactory CreateSha512FingerprintFactory() 
             => new Sha512FingerprintFactory();
     }

@@ -26,7 +26,7 @@
         public abstract Fingerprint Get();
 
         /// <summary>
-        /// THe platforms on which given <see cref="FingerprintProvider"/> works and has been tested.
+        /// The platforms supported by this <see cref="FingerprintProvider"/>.
         /// </summary>
         public abstract SupportedPlatforms SupportedPlatforms { get; }
     }

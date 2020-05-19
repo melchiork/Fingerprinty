@@ -120,6 +120,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Fingerprinty.FingerprintProviderFactory.CreateMotherboardProvider">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Fingerprinty.HDD.IWindowsDriveSerialService">
             <summary>
             Abstraction over Windows API for getting drives serial numbers. 
@@ -202,7 +208,7 @@
         </member>
         <member name="P:Fingerprinty.FingerprintProvider.SupportedPlatforms">
             <summary>
-            THe platforms on which given <see cref="T:Fingerprinty.FingerprintProvider"/> works and has been tested.
+            The platforms supported by this <see cref="T:Fingerprinty.FingerprintProvider"/>.
             </summary>
         </member>
         <member name="T:Fingerprinty.MachineNameFingerprintProvider">
@@ -218,6 +224,20 @@
             <inheritdoc />
         </member>
         <member name="P:Fingerprinty.MachineNameFingerprintProvider.SupportedPlatforms">
+            <inheritdoc />
+        </member>
+        <member name="T:Fingerprinty.MotherboardFingerprintProvider">
+            <summary>
+                Provides <seealso cref="T:Fingerprinty.Fingerprint" /> based on motherboard's serial.
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.MotherboardFingerprintProvider.#ctor(Fingerprinty.FingerprintFactory)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fingerprinty.MotherboardFingerprintProvider.Get">
+            <inheritdoc />
+        </member>
+        <member name="P:Fingerprinty.MotherboardFingerprintProvider.SupportedPlatforms">
             <inheritdoc />
         </member>
         <member name="T:Fingerprinty.ProcessorIdFingerprintProvider">
