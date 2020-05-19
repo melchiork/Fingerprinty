@@ -6,7 +6,7 @@ namespace Fingerprinty.Test.NetCore.Providers
     public class ProcessorIdFingerprintProviderShould : AllFingerprintProvidersShould
     {
         protected override FingerprintProvider FingerprintProvider { get; } =
-            FingerprintProviderFactory.Default.CreateProcessorIdFingerprintProvider();
+            FingerprintProviderFactory.Default.CreateProcessorIdProvider();
 
         [Fact]
         public void SupportOnlyWindows()

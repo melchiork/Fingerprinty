@@ -84,47 +84,40 @@
             Default instance of the factory.
             </summary>
         </member>
-        <member name="M:Fingerprinty.FingerprintProviderFactory.CreateAllDrivesFingerprintProvider">
+        <member name="M:Fingerprinty.FingerprintProviderFactory.CreateAllDrivesProvider">
             <summary>
             
             </summary>
-            <returns></returns>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateDriveProvider">
             <summary>
             
             </summary>
-            <returns></returns>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateAllMacAddressesProvider">
             <summary>
             
             </summary>
-            <returns></returns>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateMachineNameProvider">
             <summary>
             
             </summary>
-            <returns></returns>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateWindowsProductIdProvider">
             <summary>
             
             </summary>
-            <returns></returns>
         </member>
-        <member name="M:Fingerprinty.FingerprintProviderFactory.CreateProcessorIdFingerprintProvider">
+        <member name="M:Fingerprinty.FingerprintProviderFactory.CreateProcessorIdProvider">
             <summary>
             
             </summary>
-            <returns></returns>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateMotherboardProvider">
             <summary>
             
             </summary>
-            <returns></returns>
         </member>
         <member name="T:Fingerprinty.HDD.IWindowsDriveSerialService">
             <summary>
