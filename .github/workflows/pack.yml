@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env: 
-      SHORTSHA: ${{$(git rev-parse --short=7 ${{ github.sha }})}}
+      SHORTSHA: ${{(git rev-parse --short=7 ${{ github.sha }})}}
 
     steps:
     - uses: actions/checkout@v2
