@@ -22,7 +22,7 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Pack with dotnet
-      run: dotnet pack Fingerprinty --configuration Release -o CreatedPackages --no-build -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg --version-suffix SHORTSHA
+      run: dotnet pack Fingerprinty --configuration Release -o CreatedPackages --no-build -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg --version-suffix $SHORTSHA
     - name: Upload package
       uses: actions/upload-artifact@v1
       with:
