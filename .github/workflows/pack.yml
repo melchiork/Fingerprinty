@@ -3,6 +3,11 @@ name: Create NuGet package
 on:
   push:
     branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  SHA7: ${GITHUB_SHA:7}
 
 jobs:
   create-package:
@@ -18,7 +23,7 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Pack with dotnet
-      run: dotnet pack Fingerprinty --configuration Release -o CreatedPackages --no-build -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
+      run: dotnet pack Fingerprinty --configuration Release -o CreatedPackages --no-build -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg --version-suffix $SHA7
     - name: Upload package
       uses: actions/upload-artifact@v1
       with:

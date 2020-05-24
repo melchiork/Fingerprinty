@@ -6,7 +6,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/melchiork/Fingerprinty</PackageProjectUrl>
     <RepositoryUrl>https://github.com/melchiork/Fingerprinty</RepositoryUrl>
-    <Version>0.9.2</Version>
+    <VersionPrefix>0.9.2</VersionPrefix>
     <Description>Fingerprinty provides various machine based (or hardware based) fingerprints for Windows and Linux machines.</Description>
     <Copyright>melchiork</Copyright>
     <PackageTags>fingerprint hardware-fingerprint machine-fingerprint unique-identifier</PackageTags>
