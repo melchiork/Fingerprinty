@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 env:
-  SHA7: ${GITHUB_SHA:7}
+  SHA7: ${GITHUB_SHA::7}
 
 jobs:
   create-package:
