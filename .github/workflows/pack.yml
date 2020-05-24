@@ -20,7 +20,8 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Pack with dotnet
-      run: dotnet pack Fingerprinty --configuration Release -o CreatedPackages --no-build -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg --version-suffix $(echo ${GITHUB_SHA} | cut -c1-8)
+      run: dotnet pack Fingerprinty --configuration Release -o CreatedPackages --no-build -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg --version-suffix $GITHUB_SHA_SHORT
+      uses: franzdiebold/github-env-vars-action@v1.0.0
     - name: Upload package
       uses: actions/upload-artifact@v1
       with:
