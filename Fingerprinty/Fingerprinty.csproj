@@ -13,6 +13,7 @@
     <AssemblyVersion>0.9.2.0</AssemblyVersion>
     <NeutralLanguage></NeutralLanguage>
     <FileVersion>0.9.2.0</FileVersion>
+    <NoWarn>NU5105</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
