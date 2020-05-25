@@ -35,9 +35,8 @@
         </member>
         <member name="M:Fingerprinty.Fingerprint.ToString">
             <summary>
-            
+            Returns <see cref="T:System.String"/> representation of the instance.
             </summary>
-            <returns><see cref="T:System.String"/> representation fo the <see cref="T:Fingerprinty.Fingerprint"/>.</returns>
         </member>
         <member name="M:Fingerprinty.Fingerprint.Equals(Fingerprinty.Fingerprint)">
             <inheritdoc cref="M:System.IEquatable`1.Equals(`0)"/>
@@ -81,42 +80,42 @@
         </member>
         <member name="P:Fingerprinty.FingerprintProviderFactory.Default">
             <summary>
-            Default instance of the factory.
+            Default instance of the factory. Singleton instance.
             </summary>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateAllDrivesProvider">
             <summary>
-            
+            Creates new instance of <see cref="T:Fingerprinty.AllDrivesFingerprintProvider"/>.
             </summary>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateDriveProvider">
             <summary>
-            
+            Creates new instance of <see cref="T:Fingerprinty.DriveFingerprintProvider"/>.
             </summary>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateAllMacAddressesProvider">
             <summary>
-            
+            Creates new instance of <see cref="T:Fingerprinty.AllMacAddressesFingerprintProvider"/>.
             </summary>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateMachineNameProvider">
             <summary>
-            
+            Creates new instance of <see cref="T:Fingerprinty.MachineNameFingerprintProvider"/>.
             </summary>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateWindowsProductIdProvider">
             <summary>
-            
+            Creates new instance of <see cref="T:Fingerprinty.WindowsProductIdFingerprintProvider"/>.
             </summary>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateProcessorIdProvider">
             <summary>
-            
+            Creates new instance of <see cref="T:Fingerprinty.ProcessorIdFingerprintProvider"/>.
             </summary>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateMotherboardProvider">
             <summary>
-            
+            Creates new instance of <see cref="T:Fingerprinty.MotherboardFingerprintProvider"/>.
             </summary>
         </member>
         <member name="T:Fingerprinty.HDD.IWindowsDriveSerialService">
@@ -277,12 +276,12 @@
         </member>
         <member name="F:Fingerprinty.SupportedPlatforms.Windows">
             <summary>
-            
+            Windows.
             </summary>
         </member>
         <member name="F:Fingerprinty.SupportedPlatforms.Linux">
             <summary>
-            
+            Linux.
             </summary>
         </member>
     </members>

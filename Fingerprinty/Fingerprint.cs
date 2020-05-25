@@ -46,9 +46,8 @@ namespace Fingerprinty
         public string Value { get; }
 
         /// <summary>
-        /// 
+        /// Returns <see cref="string"/> representation of the instance.
         /// </summary>
-        /// <returns><see cref="string"/> representation fo the <see cref="Fingerprint"/>.</returns>
         public override string ToString() => Value;
 
         /// <inheritdoc cref="IEquatable{T}.Equals(T)"/>
