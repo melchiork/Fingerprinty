@@ -9,12 +9,12 @@ namespace Fingerprinty
     public enum SupportedPlatforms
     {
         /// <summary>
-        /// 
+        /// Windows.
         /// </summary>
         Windows = 1,
         
         /// <summary>
-        /// 
+        /// Linux.
         /// </summary>
         Linux = 2,
     }
