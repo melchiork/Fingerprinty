@@ -80,7 +80,7 @@
         </member>
         <member name="P:Fingerprinty.FingerprintProviderFactory.Default">
             <summary>
-            Default instance of the factory. Singleton instance.
+            Default instance of the factory. A singleton.
             </summary>
         </member>
         <member name="M:Fingerprinty.FingerprintProviderFactory.CreateAllDrivesProvider">
