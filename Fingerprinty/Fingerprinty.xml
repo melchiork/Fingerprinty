@@ -4,6 +4,30 @@
         <name>Fingerprinty</name>
     </assembly>
     <members>
+        <member name="T:Fingerprinty.Composers.FingerprintComposer">
+            <summary>
+            TODO Docs
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.Composers.FingerprintComposer.Compose(System.Collections.Generic.List{System.String})">
+            <summary>
+            TODO Docs
+            </summary>
+            <param name="components"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Fingerprinty.Composers.Sha512FingerprintComposer">
+            <summary>
+            TODO Docs
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.Composers.Sha512FingerprintComposer.Compose(System.Collections.Generic.List{System.String})">
+            <summary>
+            TODO Docs
+            </summary>
+            <param name="components"></param>
+            <returns></returns>
+        </member>
         <member name="T:Fingerprinty.Fingerprint">
             <summary>
             Potentially unique fingerprint of a machine.
@@ -49,6 +73,36 @@
             Calculates hash code.
             </summary>
             <returns>Hash code</returns>
+        </member>
+        <member name="T:Fingerprinty.FingerprintBuilder">
+            <summary>
+            TODO Docs
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.FingerprintBuilder.#ctor">
+            <summary>
+            TODO Docs
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.FingerprintBuilder.WithSource(Fingerprinty.Sources.FingerprintSource)">
+            <summary>
+            TODO Docs
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fingerprinty.FingerprintBuilder.UsingComposer(Fingerprinty.Composers.FingerprintComposer)">
+            <summary>
+            TODO Docs
+            </summary>
+            <param name="composer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fingerprinty.FingerprintBuilder.Build">
+            <summary>
+            TODO Docs
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Fingerprinty.FingerprintFactory">
             <summary>
@@ -268,6 +322,29 @@
         </member>
         <member name="M:Fingerprinty.Sha512FingerprintFactory.Create(System.Byte[])">
             <inheritdoc />
+        </member>
+        <member name="T:Fingerprinty.Sources.FingerprintSource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.Sources.FingerprintSource.Get">
+            <summary>
+            TODO Docs
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Fingerprinty.Sources.MachineNameFingerprintSource">
+            <summary>
+            TODO Docs
+            </summary>
+        </member>
+        <member name="M:Fingerprinty.Sources.MachineNameFingerprintSource.Get">
+            <summary>
+            TODO Docs
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Fingerprinty.SupportedPlatforms">
             <summary>
