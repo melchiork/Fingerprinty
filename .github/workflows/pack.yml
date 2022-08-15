@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Build with dotnet
-      run: dotnet build --configuration Release
+      run: dotnet build Fingerprinty --configuration Release
     - name: Pack with dotnet
       run: dotnet pack Fingerprinty --configuration Release -o CreatedPackages --no-build -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg --version-suffix $(echo ${GITHUB_SHA} | cut -c1-8)
     - name: Upload package
