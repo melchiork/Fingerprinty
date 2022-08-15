@@ -28,7 +28,7 @@ jobs:
         name: coverage-ubuntu
         path: ./Fingerprinty.Test.NetCore/coverage
 
-  build-windows:
+  build-windows-netcore:
 
     runs-on: windows-latest
 
@@ -47,3 +47,18 @@ jobs:
       with:
         name: coverage-windows
         path: ./Fingerprinty.Test.NetCore/coverage
+
+  build-windows-netframework:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup MSBuild Path
+      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: Restore NuGet Packages
+      run: nuget restore Fingerprinty.sln
+    - name: Build
+      run: msbuild Fingerprinty.sln /p:Configuration=Debug
+    - name: Run Tests
+      run: vstest.console.exe .\Fingerprinty.Test.NetCore\bin\Debug\Fingerprinty.Test.NetCore.dll

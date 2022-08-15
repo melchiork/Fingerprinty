@@ -54,7 +54,7 @@ namespace Fingerprinty.Test.NetCore.Providers
                 .Should()
                 .NotBeEmpty();
 
-            static Func<ConstructorInfo, bool> HasParameterOfTypeFingerprintFactory()
+            Func<ConstructorInfo, bool> HasParameterOfTypeFingerprintFactory()
             {
                 return c => c.GetParameters().Select(p => p.ParameterType).Contains(typeof(FingerprintFactory));
             }
