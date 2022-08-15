@@ -19,16 +19,16 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Build with dotnet
-      run: dotnet build --configuration Debug
+      run: dotnet build Fingerprinty.Test.NetCore --configuration Debug -f netcoreapp3.1
     - name: Test with dotnet
-      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/'
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/' -f netcoreapp3.1
     - name: Upload coverage details
       uses: actions/upload-artifact@v1
       with:
         name: coverage-ubuntu
         path: ./Fingerprinty.Test.NetCore/coverage
 
-  build-windows:
+  build-windows-netcore:
 
     runs-on: windows-latest
 
@@ -39,11 +39,28 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Build with dotnet
-      run: dotnet build --configuration Debug
+      run: dotnet build Fingerprinty.Test.NetCore --configuration Debug -f netcoreapp3.1
     - name: Test with dotnet
-      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/'
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/' -f netcoreapp3.1
     - name: Upload coverage details
       uses: actions/upload-artifact@v1
       with:
         name: coverage-windows
         path: ./Fingerprinty.Test.NetCore/coverage
+
+  build-windows-netframework:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
+    - name: Setup VSTest Path
+      uses: darenm/Setup-VSTest@v1
+    - name: Restore NuGet Packages
+      run: nuget restore Fingerprinty.sln
+    - name: Build
+      run: msbuild Fingerprinty.sln /p:Configuration=Debug
+    - name: Run Tests
+      run: vstest.console.exe .\Fingerprinty.Test.NetCore\bin\Debug\net48\Fingerprinty.Test.NetCore.dll
