@@ -19,7 +19,7 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Build with dotnet
-      run: dotnet build --configuration Debug
+      run: dotnet build --configuration Debug -f netcoreapp3.1
     - name: Test with dotnet
       run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/'
     - name: Upload coverage details
@@ -39,7 +39,7 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Build with dotnet
-      run: dotnet build --configuration Debug
+      run: dotnet build --configuration Debug -f netcoreapp3.1
     - name: Test with dotnet
       run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/'
     - name: Upload coverage details
@@ -54,8 +54,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup MSBuild Path
-      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
     - name: Restore NuGet Packages
       run: nuget restore Fingerprinty.sln
     - name: Build
