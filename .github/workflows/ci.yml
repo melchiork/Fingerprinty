@@ -21,7 +21,7 @@ jobs:
     - name: Build with dotnet
       run: dotnet build Fingerprinty.Test.NetCore --configuration Debug -f netcoreapp3.1
     - name: Test with dotnet
-      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/'
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/' -f netcoreapp3.1
     - name: Upload coverage details
       uses: actions/upload-artifact@v1
       with:
@@ -41,7 +41,7 @@ jobs:
     - name: Build with dotnet
       run: dotnet build Fingerprinty.Test.NetCore --configuration Debug -f netcoreapp3.1
     - name: Test with dotnet
-      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/'
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutput='./coverage/' -f netcoreapp3.1
     - name: Upload coverage details
       uses: actions/upload-artifact@v1
       with:
@@ -63,4 +63,4 @@ jobs:
     - name: Build
       run: msbuild Fingerprinty.sln /p:Configuration=Debug
     - name: Run Tests
-      run: vstest.console.exe .\Fingerprinty.Test.NetCore\bin\Debug\Fingerprinty.Test.NetCore.dll
+      run: vstest.console.exe .\Fingerprinty.Test.NetCore\bin\Debug\net48\Fingerprinty.Test.NetCore.dll
